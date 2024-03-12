@@ -1,60 +1,71 @@
-﻿//Clase 5 
-using System;
+﻿using System;
 
 class Program
 {
-    private static string promedio;
-    private static int val2;
-    private static int val1;
+    static void Main(string[] args)
+    {
+        bool salir = false;
 
-    //ejercicio 1 
+        while (!salir)
+        {
+            Console.WriteLine("Selecciona una opción:");
+            Console.WriteLine("1. Suma");
+            Console.WriteLine("2. Datos");
+            Console.WriteLine("3. Calcular Edad");
+            Console.WriteLine("4. Salir");
+
+            int opcion = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    Suma();
+                    break;
+                case 2:
+                    Datos();
+                    break;
+                case 3:
+                    CalEdad();
+                    break;
+                case 4:
+                    salir = true;
+                    Console.WriteLine("Saliendo del programa...");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Por favor, elija nuevamente.");
+                    break;
+            }
+        }
+    }
+
     static void Suma()
     {
-        int valor = 30;
-        Console.WriteLine(valor);
-        int val1, val2;
         Console.WriteLine("Ingrese valor 1:");
-        val1 = Convert.ToInt32(Console.ReadLine());
+        int val1 = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Ingrese valor 2:");
-        val2 = Convert.ToInt32(Console.ReadLine());
+        int val2 = Convert.ToInt32(Console.ReadLine());
         int Respuesta = val1 + val2;
-        Console.WriteLine("suma =" + Respuesta);
+        Console.WriteLine("La suma es: " + Respuesta);
+        Console.WriteLine();
     }
-    //ejer2 
+
     static void Datos()
     {
-        Console.WriteLine("Cual es su nombre;");
+        Console.WriteLine("Cuál es su nombre:");
         string nombre = Console.ReadLine();
-        Console.WriteLine("mucho gusto" + nombre);
+        Console.WriteLine("Mucho gusto, en conocerte" + nombre);
+        Console.WriteLine();
     }
-    //ejer3
-    static int CalEdad()
+
+    static void CalEdad()
     {
-        Console.WriteLine("Ingrese su año de nacimiento0");
+        Console.WriteLine("Ingrese su año de nacimiento:");
         int yearBorn = Convert.ToInt32(Console.ReadLine());
-        int edad = yearBorn - 2024;
-        Console.WriteLine("su edad es=", edad);
-
-        static int Suma1(int val1, int val2, int v)
-        {
-            return val1 + val2;
-        }
-        int resultado = val2 + val1;
-        return resultado;
-
-
-        static int suma1(int val1, int val2, int val3)
-        {
-            return val1 + val2 + val3;
-        }
-
-        int Promedio = Suma1(30, 20, 40);
-        Console.WriteLine("namet tiene prom de" + promedio);
+        int edad = 2024 - yearBorn;
+        Console.WriteLine("Su edad es: " + edad);
+        Console.WriteLine();
     }
 }
 
 
-        
-
-        
-       // funcion es un cloque de codigo reutilizable, por ejemplo suma, que se envia dos numeros 
+// funcion es un cloque de codigo reutilizable, por ejemplo suma, que se envia dos numeros 
